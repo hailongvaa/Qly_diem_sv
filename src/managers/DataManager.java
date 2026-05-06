@@ -27,7 +27,7 @@ public class DataManager {
     public void saveStudents(List<Student> students) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(STUDENTS_FILE))) {
             for (Student s : students) {
-                writer.println(s.getMssv() + "," + s.getName() + "," + s.getDob() + "," + s.getClassName());
+                writer.println(s.getMssv() + "," + s.getName() + "," + s.getClassName());
             }
         } catch (IOException e) {
             System.out.println("Lỗi lưu file students.txt: " + e.getMessage());
@@ -43,8 +43,8 @@ public class DataManager {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
-                if (parts.length == 4) {
-                    students.add(new Student(parts[0], parts[1], parts[2], parts[3]));
+                if (parts.length == 3) {
+                    students.add(new Student(parts[0], parts[1], parts[2]));
                 }
             }
         } catch (IOException e) {

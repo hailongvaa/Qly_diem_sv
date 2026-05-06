@@ -3,13 +3,11 @@ package models;
 public class Student {
     private String mssv;
     private String name;
-    private String dob;
     private String className;
 
-    public Student(String mssv, String name, String dob, String className) {
+    public Student(String mssv, String name, String className) {
         this.mssv = mssv;
         this.name = name;
-        this.dob = dob;
         this.className = className;
     }
 
@@ -29,14 +27,6 @@ public class Student {
         this.name = name;
     }
 
-    public String getDob() {
-        return dob;
-    }
-
-    public void setDob(String dob) {
-        this.dob = dob;
-    }
-
     public String getClassName() {
         return className;
     }
@@ -47,6 +37,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return String.format("MSSV: %-10s | Tên: %-20s | Ngày sinh: %-12s | Lớp: %s", mssv, name, dob, className);
+        return String.format("MSSV: %-10s | Tên: %-20s | Lớp: %s", mssv, name, className);
     }
 }

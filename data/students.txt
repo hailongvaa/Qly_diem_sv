@@ -1,1 +1,62 @@
-123,long,01/01/2007,hailong
+2531540591,Trần Lê Phúc An,25ĐHAI01 - Trí tuệ nhân tạo và Inernet vạn vật 01
+2531540042,Võ Văn Huỳnh Ân,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540408,Nguyễn Đức Anh,25ĐHAI02 - Trí tuệ nhân tạo và Inernet vạn vật 02
+2531540004,Nguyễn Hồ Mai Anh,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540300,Nguyễn Võ Hồng Ánh,25ĐHAI02 - Trí tuệ nhân tạo và Inernet vạn vật 02
+2531540031,Hồ Gia Bảo,25ĐHAI01 - Trí tuệ nhân tạo và Inernet vạn vật 01
+2531540086,Trần Đăng Gia Bảo,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2331540237,Nguyễn Hữu Chinh,23ĐHTT05 Công nghệ thông tin 05
+2531540116,Nguyễn Đức Cường,25ĐHSA02 - Công nghệ phần mềm và trí tuệ nhân tạo 02
+2531540200,Phan Thành Đạt,25ĐHSA03 - Công nghệ phần mềm và trí tuệ nhân tạo 03
+2531540011,Nguyễn Việt Dũng,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540089,Nguyễn Lê Khánh Duy,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540531,Phan Lê Huy Hân,25ĐHSA07 - Công nghệ phần mềm và trí tuệ nhân tạo 07
+2531540022,Huỳnh Gia Hào,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2331540255,Võ Thái Học,23ĐHTT05 Công nghệ thông tin 05
+2531540121,Lê Nguyễn Khánh Hưng,25ĐHSA02 - Công nghệ phần mềm và trí tuệ nhân tạo 02
+2531540068,Bùi Quốc Huy,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540010,Lê Bửu Huy,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540084,Lê Nguyễn Gia Huy,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540406,Châu Nhựt Kha,25ĐHAI02 - Trí tuệ nhân tạo và Inernet vạn vật 02
+2531540040,Võ Hoàng Khá,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540066,Huỳnh Thanh Khang,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540629,Nguyễn Phạm Quốc Khánh,25ĐHSA06 - Công nghệ phần mềm và trí tuệ nhân tạo 06
+2531540076,Hồ Viết Minh Khoa,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540085,Lê Minh Khoa,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540041,Trần Đăng Khôi,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540071,Nguyễn Trần Minh Khuê,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540529,Đỗ Thị Phương Linh,25ĐHSA07 - Công nghệ phần mềm và trí tuệ nhân tạo 07
+2531540235,Phạm Khánh Linh,25ĐHAI01 - Trí tuệ nhân tạo và Inernet vạn vật 01
+2531540013,Dềng Đạt Lộc,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540054,Diệp Vĩnh Long,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540267,Đinh Hoàng Long,25ĐHAB01 - Trí tuệ nhân tạo và dữ liệu lớn 01
+2531540654,Nguyễn Hải Long,25ĐHSA07 - Công nghệ phần mềm và trí tuệ nhân tạo 07
+2531540150,Nguyễn Huệ Bình Minh,25ĐHAB01 - Trí tuệ nhân tạo và dữ liệu lớn 01
+2531540008,Nguyễn Phạm Nhật Minh,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540018,Phạm Phương Nam,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540208,Đinh Hoàng Kim Ngân,25ĐHAI01 - Trí tuệ nhân tạo và Inernet vạn vật 01
+2531540521,Lê Hoàng Kim Ngân,25ĐHSA07 - Công nghệ phần mềm và trí tuệ nhân tạo 07
+2531540067,Nguyễn Phan Bảo Ngọc,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540342,Nguyễn Thuỳ Bảo Ngọc,25ĐHAI02 - Trí tuệ nhân tạo và Inernet vạn vật 02
+2531540259,Phan Minh Nguyên,25ĐHSA03 - Công nghệ phần mềm và trí tuệ nhân tạo 03
+2531540127,Vũ Hoàng Khôi Nguyên,25ĐHSA02 - Công nghệ phần mềm và trí tuệ nhân tạo 02
+2254810077,TRỊNH NGỌC NHẤT,22ĐHTT02 Công nghệ thông tin 02
+2531540358,Trịnh Ngọc Phát,25ĐHAI02 - Trí tuệ nhân tạo và Inernet vạn vật 02
+2531540079,Dương Nguyên Phong,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540653,Nguyễn Anh Phúc,25ĐHSA07 - Công nghệ phần mềm và trí tuệ nhân tạo 07
+2531540073,Lê Nguyễn Thảo Phương,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540005,Nguyễn Ngọc Quang,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540024,Nguyễn Giang Sơn,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540153,Mai Ngô Thái,25ĐHSA02 - Công nghệ phần mềm và trí tuệ nhân tạo 02
+2531540056,Trịnh Đắc Thắng,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540417,Bùi Phương Thảo,25ĐHAB02 - Trí tuệ nhân tạo và dữ liệu lớn 02
+2531540481,Bùi Phước Thịnh,25ĐHSA05 - Công nghệ phần mềm và trí tuệ nhân tạo 05
+2531540137,Nguyễn Đặng Thanh Thúy,25ĐHSA02 - Công nghệ phần mềm và trí tuệ nhân tạo 02
+2531540078,Phạm Đinh Ngọc Tín,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540478,Võ Văn Tịnh,25ĐHAI02 - Trí tuệ nhân tạo và Inernet vạn vật 02
+2531540709,Phan Nguyễn Thanh Toàn,25ĐHAI02 - Trí tuệ nhân tạo và Inernet vạn vật 02
+2331540314,Phạm Nguyễn Anh Trung,23ĐHTT03 Công nghệ thông tin 03
+2331540262,Nguyễn Trọng Trường,23ĐHTT05 Công nghệ thông tin 05
+2531540050,Lê Anh Tuấn,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540045,Phạm Quốc Vương,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01
+2531540019,Trương Hoằng Xương,25ĐHSA01 - Công nghệ phần mềm và trí tuệ nhân tạo 01

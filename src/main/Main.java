@@ -71,11 +71,10 @@ public class Main {
         System.out.println("\n--- Thêm Sinh Viên ---");
         String mssv = ValidationUtils.readString(scanner, "Nhập MSSV: ");
         String name = ValidationUtils.readString(scanner, "Nhập Tên: ");
-        String dob = ValidationUtils.readDate(scanner, "Nhập Ngày sinh (dd/MM/yyyy): ");
         String className = ValidationUtils.readString(scanner, "Nhập Lớp: ");
         
         try {
-            manager.addStudent(new Student(mssv, name, dob, className));
+            manager.addStudent(new Student(mssv, name, className));
         } catch (Exception e) {
             System.out.println("Lỗi: " + e.getMessage());
         }

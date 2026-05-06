@@ -1,43 +1,88 @@
-# Hướng dẫn Ứng dụng Quản lý Điểm Sinh Viên
+# 🎓 Hệ Thống Quản Lý Điểm Sinh Viên (Java CLI)
 
-Ứng dụng quản lý điểm sinh viên đã được xây dựng hoàn tất bằng ngôn ngữ Java theo chuẩn OOP, bao gồm các chức năng quản lý, thêm/sửa/xóa, tính toán GPA và lưu trữ file tự động.
+![Java](https://img.shields.io/badge/Language-Java-orange?style=for-the-badge&logo=java)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)
 
-## 1. Cấu trúc Dự án
+Một giải pháp quản lý học tập toàn diện dành cho môi trường giáo dục, được tối ưu hóa cho hiệu năng và độ tin cậy của dữ liệu trên giao diện dòng lệnh (CLI).
 
-Mã nguồn được chia làm các package như sau:
+---
 
-*   **`models`**: Chứa các thực thể chính như `Student` (Sinh viên), `Subject` (Môn học), `Course` (Khóa học), và `Score` (Điểm số liên kết giữa 3 thực thể trên).
-*   **`managers`**:
-    *   `StudentManager`: Quản lý logic nghiệp vụ, tính điểm, thống kê.
-    *   `DataManager`: Xử lý I/O, tự động tạo thư mục `data/` và ghi đè nội dung ra các file TXT để lưu trữ dữ liệu vĩnh viễn (Data Persistence).
-*   **`utils`**:
-    *   `ValidationUtils`: Đóng gói các hàm kiểm tra nhập liệu từ bàn phím, đảm bảo người dùng nhập đúng định dạng (chữ, số thực, ngày sinh) và không bị crash do lỗi ngoại lệ.
-*   **`main`**:
-    *   `Main`: Chứa hàm chạy chính và Menu giao diện người dùng CLI.
+## 🌟 Giới thiệu
 
-## 2. Các Tính năng Chính
+**Hệ Thống Quản Lý Điểm Sinh Viên** là một ứng dụng Java được thiết kế theo mô hình hướng đối tượng (OOP) hiện đại. Ứng dụng cung cấp một quy trình quản lý khép kín từ việc lưu trữ thông tin sinh viên, môn học đến việc tính toán GPA và xếp loại học lực tự động. Với cơ chế lưu trữ dữ liệu thông minh, chương trình đảm bảo tính toàn vẹn của thông tin ngay cả khi xảy ra các tình huống ngắt đột ngột.
 
-*   **Toàn vẹn Dữ liệu (Validation)**: Không cho phép nhập trùng `MSSV`, `Mã MH`, `Mã KH`. Yêu cầu nhập đúng khoảng điểm (0-10) và số tín chỉ (1-10).
-*   **Xử lý Ngoại lệ (Exception Handling)**: Nếu nhập sai kiểu (chữ thay vì số), chương trình sẽ hiển thị lỗi thay vì thoát (crash).
-*   **Quản lý Điểm liên kết**: Cho phép nhập, sửa hoặc xóa điểm của 1 sinh viên trong 1 khóa học và môn học nhất định.
-*   **Tính toán và Thống kê**: Tự động tính GPA toàn khóa theo trọng số tín chỉ và phân loại Học lực (Giỏi, Khá, Trung bình, Yếu), sắp xếp thứ hạng từ cao xuống thấp.
-*   **Tự động Lưu trữ (Shutdown Hook)**: Dữ liệu được đọc lên khi mở app và được lưu tự động ra file khi người dùng bấm thoát (chức năng 8) nhờ `Runtime.getRuntime().addShutdownHook`.
+## 🚀 Các Tính Năng Nổi Bật
 
-## 3. Cách Biên dịch và Chạy
+| Tính năng | Mô tả |
+| :--- | :--- |
+| **Quản lý Thực thể** | Quản lý linh hoạt danh sách Sinh viên, Môn học và Khóa học với mã định danh duy nhất. |
+| **Quản lý Điểm số** | Cho phép nhập mới, cập nhật hoặc xóa điểm số theo mối quan hệ đa chiều (Sinh viên - Môn học - Khóa học). |
+| **Tính toán GPA** | Tự động tính điểm trung bình hệ 10 và GPA hệ 4 theo trọng số tín chỉ của từng môn học. |
+| **Xếp loại & Thống kê** | Phân loại học lực (Giỏi, Khá, Trung bình, Yếu) và báo cáo tỷ lệ phần trăm trực quan. |
+| **Tìm kiếm Thông minh** | Truy xuất nhanh thông tin sinh viên và bảng điểm chi tiết chỉ với MSSV hoặc một phần tên. |
+| **Lưu trữ Tự động** | Cơ chế `Shutdown Hook` giúp tự động đồng bộ dữ liệu vào tệp `.txt` khi thoát ứng dụng. |
 
-**Lưu ý:** Bạn cần biên dịch với cờ `-encoding UTF-8` để hiển thị đúng Tiếng Việt có dấu trên Terminal.
+## 🛠 Điểm Nhấn Kỹ Thuật
 
-Mở Terminal tại thư mục `d:\qly_diem_sv` và chạy các lệnh sau:
+*   **Kiến trúc Module:** Dự án được chia nhỏ thành các package chuyên biệt (`models`, `managers`, `utils`), giúp dễ dàng bảo trì và mở rộng.
+*   **Validation Toàn diện:** Lớp `ValidationUtils` đảm bảo mọi dữ liệu nhập từ bàn phím (số thực, số nguyên, định dạng chuỗi) đều được kiểm soát chặt chẽ, loại bỏ hoàn toàn các lỗi gây treo chương trình.
+*   **Persistence Layer:** Sử dụng `DataManager` để xử lý I/O tệp tin hiệu quả, hỗ trợ đọc/ghi dữ liệu theo định dạng cấu trúc, giúp dữ liệu luôn tồn tại bền vững giữa các lần chạy.
+*   **Hiển thị Tiếng Việt:** Hỗ trợ đầy đủ bảng mã UTF-8 cho tên sinh viên và môn học, mang lại trải nghiệm người dùng tốt nhất.
 
-### Biên dịch (Compile)
+## 📂 Cấu Trúc Mã Nguồn
+
+```text
+qly_diem_sv/
+├── data/               # Lưu trữ cơ sở dữ liệu dưới dạng tệp văn bản (.txt)
+│   ├── students.txt    # Danh sách sinh viên
+│   ├── subjects.txt    # Danh mục môn học
+│   ├── courses.txt     # Danh sách khóa học
+│   └── scores.txt      # Bảng điểm tổng hợp
+├── src/
+│   ├── models/         # Các lớp thực thể: Student, Subject, Course, Score
+│   ├── managers/       # Xử lý logic: StudentManager, DataManager
+│   ├── utils/          # Công cụ hỗ trợ: ValidationUtils
+│   └── main/           # Lớp khởi chạy: Main.java
+├── bin/                # Thư mục chứa tệp thực thi (.class)
+└── README.md           # Tài liệu hướng dẫn (Tệp tin hiện tại)
+```
+
+## 💻 Hướng Dẫn Cài Đặt & Sử Dụng
+
+### 1. Chuẩn bị
+*   Đảm bảo máy tính đã cài đặt **JDK 8** hoặc mới hơn.
+*   Sử dụng Terminal hoặc Command Prompt có hỗ trợ hiển thị ký tự UTF-8.
+
+### 2. Biên dịch (Compile)
+Mở cửa sổ dòng lệnh tại thư mục gốc của dự án và chạy lệnh:
 ```powershell
 mkdir bin
 javac -encoding UTF-8 -d bin -sourcepath src src/main/Main.java
 ```
 
-### Chạy ứng dụng (Run)
+### 3. Khởi chạy (Run)
+Sử dụng lệnh sau để bắt đầu trải nghiệm ứng dụng:
 ```powershell
 java -cp bin main.Main
 ```
 
-Sau khi chạy, giao diện sẽ xuất hiện với 8 tùy chọn. Hãy thử thêm một vài dữ liệu sau đó bấm phím `8` để thoát và xem dữ liệu được lưu trong thư mục `data/` sinh ra tại thư mục gốc của project.
+### 4. Quy trình sử dụng đề xuất
+1.  **Khởi tạo:** Thêm một vài Sinh viên, Môn học và Khóa học thông qua các phím chức năng `1, 2, 3`.
+2.  **Nhập liệu:** Sử dụng phím `4` để nhập điểm. Hệ thống sẽ yêu cầu MSSV và các mã môn học/khóa học tương ứng.
+3.  **Tra cứu:** Sử dụng phím `6` để xem bảng điểm cá nhân và GPA hiện tại của sinh viên.
+4.  **Tổng kết:** Sử dụng phím `7` để xem báo cáo thống kê xếp loại cho toàn bộ danh sách.
+
+## 📝 Lưu ý quan trọng
+*   Dữ liệu được lưu trữ tự động trong thư mục `data/`. Không nên chỉnh sửa thủ công các tệp tin này trừ khi bạn hiểu rõ cấu trúc dữ liệu bên trong.
+*   Khi nhập năm học, hãy tuân thủ định dạng gợi ý (VD: `2024-2025`) để báo cáo được hiển thị đẹp mắt nhất.
+
+---
+
+## 👨‍💻 Tác giả
+*   **Phát triển bởi:**Hải Long (Hlng)
+*   **Dự án:** Quản Lý Điểm Sinh Viên
+*   **Ngôn ngữ:** Java Core
+
+---
+*Nếu bạn thấy dự án này hữu ích, hãy để lại một ⭐ trên GitHub nhé!*
