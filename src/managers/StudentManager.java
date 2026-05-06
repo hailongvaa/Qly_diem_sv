@@ -150,7 +150,18 @@ public class StudentManager {
     }
 
     // --- Tính toán & Thống kê ---
-    public double calculateGPA(String mssv, String courseId) {
+    public double convert10To4(double score10) {
+        if (score10 >= 8.5) return 4.0;
+        if (score10 >= 8.0) return 3.5;
+        if (score10 >= 7.0) return 3.0;
+        if (score10 >= 6.5) return 2.5;
+        if (score10 >= 5.5) return 2.0;
+        if (score10 >= 5.0) return 1.5;
+        if (score10 >= 4.0) return 1.0;
+        return 0.0;
+    }
+
+    public double calculateAverage10(String mssv, String courseId) {
         double totalScore = 0;
         int totalCredits = 0;
 
@@ -166,24 +177,43 @@ public class StudentManager {
         return totalCredits == 0 ? 0 : totalScore / totalCredits;
     }
 
-    public String classifyStudent(double gpa) {
-        if (gpa >= 8.0) return "Giỏi";
-        if (gpa >= 6.5) return "Khá";
-        if (gpa >= 5.0) return "Trung bình";
+    public double calculateGPA4(String mssv, String courseId) {
+        double totalScore4 = 0;
+        int totalCredits = 0;
+
+        for (Score s : scores) {
+            if (s.getMssv().equalsIgnoreCase(mssv) && (courseId == null || s.getCourseId().equalsIgnoreCase(courseId))) {
+                Subject subject = findSubject(s.getSubjectId());
+                if (subject != null) {
+                    totalScore4 += convert10To4(s.getValue()) * subject.getCredit();
+                    totalCredits += subject.getCredit();
+                }
+            }
+        }
+        return totalCredits == 0 ? 0 : totalScore4 / totalCredits;
+    }
+
+    public String classifyStudent(double gpa4) {
+        if (gpa4 >= 3.6) return "Xuất sắc";
+        if (gpa4 >= 3.2) return "Giỏi";
+        if (gpa4 >= 2.5) return "Khá";
+        if (gpa4 >= 2.0) return "Trung bình";
         return "Yếu";
     }
 
     public void displayStudentStatistics() {
         System.out.println("--- Thống kê Sinh viên ---");
-        int gioi = 0, kha = 0, tb = 0, yeu = 0;
+        int xuatSac = 0, gioi = 0, kha = 0, tb = 0, yeu = 0;
         
         List<StudentScore> list = new ArrayList<>();
         for (Student s : students) {
-            double gpa = calculateGPA(s.getMssv(), null); // GPA toàn khóa
-            list.add(new StudentScore(s, gpa));
+            double avg10 = calculateAverage10(s.getMssv(), null); // ĐTB hệ 10 toàn khóa
+            double gpa4 = calculateGPA4(s.getMssv(), null); // GPA hệ 4 toàn khóa
+            list.add(new StudentScore(s, avg10, gpa4));
             
-            String xepLoai = classifyStudent(gpa);
+            String xepLoai = classifyStudent(gpa4);
             switch (xepLoai) {
+                case "Xuất sắc": xuatSac++; break;
                 case "Giỏi": gioi++; break;
                 case "Khá": kha++; break;
                 case "Trung bình": tb++; break;
@@ -191,15 +221,16 @@ public class StudentManager {
             }
         }
         
-        // Sắp xếp giảm dần theo GPA
-        list.sort((a, b) -> Double.compare(b.gpa, a.gpa));
+        // Sắp xếp giảm dần theo GPA hệ 4
+        list.sort((a, b) -> Double.compare(b.gpa4, a.gpa4));
         
         System.out.println("Xếp hạng sinh viên:");
         for (StudentScore ss : list) {
-            System.out.printf("%s - GPA: %.2f - Xếp loại: %s\n", ss.student.getName(), ss.gpa, classifyStudent(ss.gpa));
+            System.out.printf("%s - ĐTB (10): %.2f - GPA (4): %.2f - Xếp loại: %s\n", ss.student.getName(), ss.avg10, ss.gpa4, classifyStudent(ss.gpa4));
         }
         
         System.out.println("\nTổng quan học lực:");
+        System.out.println("Xuất sắc: " + xuatSac);
         System.out.println("Giỏi: " + gioi);
         System.out.println("Khá: " + kha);
         System.out.println("Trung bình: " + tb);
@@ -209,10 +240,12 @@ public class StudentManager {
     // Lớp phụ trợ để sắp xếp
     private static class StudentScore {
         Student student;
-        double gpa;
-        StudentScore(Student student, double gpa) {
+        double avg10;
+        double gpa4;
+        StudentScore(Student student, double avg10, double gpa4) {
             this.student = student;
-            this.gpa = gpa;
+            this.avg10 = avg10;
+            this.gpa4 = gpa4;
         }
     }
 }

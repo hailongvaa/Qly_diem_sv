@@ -149,7 +149,16 @@ public class Main {
         Student s = manager.findStudent(keyword);
         if (s != null) {
             System.out.println("Kết quả: " + s);
-            System.out.println("GPA Toàn khóa: " + manager.calculateGPA(s.getMssv(), null));
+            System.out.printf("Điểm TB hệ 10 toàn khóa: %.2f\n", manager.calculateAverage10(s.getMssv(), null));
+            System.out.printf("GPA hệ 4 toàn khóa: %.2f\n", manager.calculateGPA4(s.getMssv(), null));
+            
+            System.out.print("Bạn có muốn xem điểm theo khóa học không? (y/n): ");
+            String viewCourse = scanner.nextLine().trim();
+            if (viewCourse.equalsIgnoreCase("y")) {
+                String courseId = ValidationUtils.readString(scanner, "Nhập Mã khóa học: ");
+                System.out.printf("Điểm TB hệ 10 khóa %s: %.2f\n", courseId, manager.calculateAverage10(s.getMssv(), courseId));
+                System.out.printf("GPA hệ 4 khóa %s: %.2f\n", courseId, manager.calculateGPA4(s.getMssv(), courseId));
+            }
         } else {
             System.out.println("Không tìm thấy sinh viên nào khớp với từ khóa.");
         }
