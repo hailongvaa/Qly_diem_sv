@@ -1,10 +1,23 @@
 package models;
 
+import java.util.Objects;
+
+/**
+ * Đại diện cho một khóa học (học kỳ) trong hệ thống.
+ * Mỗi khóa học gắn liền với một năm học và học kỳ cụ thể.
+ */
 public class Course {
     private String courseId;
     private String year;
     private int semester;
 
+    /**
+     * Khởi tạo một đối tượng Course.
+     *
+     * @param courseId  Mã khóa học (định danh duy nhất)
+     * @param year     Năm học (VD: "2024-2025")
+     * @param semester Học kỳ (1-8)
+     */
     public Course(String courseId, String year, int semester) {
         this.courseId = courseId;
         this.year = year;
@@ -33,6 +46,22 @@ public class Course {
 
     public void setSemester(int semester) {
         this.semester = semester;
+    }
+
+    /**
+     * Hai khóa học được coi là bằng nhau nếu có cùng mã khóa học.
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Course course = (Course) o;
+        return courseId != null && courseId.equalsIgnoreCase(course.courseId);
+    }
+
+    @Override
+    public int hashCode() {
+        return courseId != null ? courseId.toLowerCase().hashCode() : 0;
     }
 
     @Override
